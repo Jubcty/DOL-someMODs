@@ -9,7 +9,6 @@ function goToSelectedPassage() {
   window.goToSelectedPassage = goToSelectedPassage;
 
   function setupPurchase() {
-    // Store the selected value in the SugarCube State
     State.variables.selectedItem = $("#LiDropdown").val();
   }
   window.setupPurchase = setupPurchase;
