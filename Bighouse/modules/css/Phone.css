@@ -4,8 +4,8 @@
 	width: 140px;
 	height: 60px;
 	border-right: 2px solid #DEEFF8;
-	display: flex;  /* 使用 Flexbox */
-	justify-content: center;  /* 水平居中 */
+	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -15,8 +15,8 @@
 	width: 140px;
 	height: 60px;
 	border-right: 2px solid #DEEFF8;
-	display: flex;  /* 使用 Flexbox */
-	justify-content: center;  /* 水平居中 */
+	display: flex; 
+	justify-content: center; 
 	align-items: center;
 }
 
@@ -25,8 +25,8 @@
 	left: 280px;
 	width: 140px;
 	height: 60px;
-	display: flex;  /* 使用 Flexbox */
-	justify-content: center;  /* 水平居中 */
+	display: flex; 
+	justify-content: center; 
 	align-items: center;
 }
 
@@ -39,11 +39,11 @@
 
 #ChatOtherContainer{
 	display: none;
-	position: absolute; /* 需要使用绝对定位相对于父容器 */
-    top: 100px; /* 距离父容器的顶部100px */
-    left: 10px; /* 左边减少10px宽度 */
-    right: 10px; /* 右边减少10px宽度 */
-    height: 645px; /* 维持原有高度 */
+	position: absolute; 
+    top: 100px;
+    left: 10px; 
+    right: 10px;
+    height: 645px;
     border: 1px solid #C8C8C8;
 }
 
@@ -98,12 +98,12 @@
 }
 
 .changephoto {
-    flex: 1;                        /* 使所有区域平等分配空间 */
+    flex: 1;                       
     display: flex;
-    justify-content: center;       /* 水平居中内容 */
-    align-items: center;            /* 垂直居中内容 */
-    text-align: center;             /* 文字居中 */
-    padding: 7px;                  /* 可选: 添加内部间距 */
+    justify-content: center;       
+    align-items: center;            
+    text-align: center;            
+    padding: 7px;                  
 }
 
 #ChangeArea{
@@ -189,7 +189,7 @@
 
 #PhoneOverlayContainer{
 	display: none;
-	transform: scale(0.8); /* 缩小为原来的 80% */
+	transform: scale(0.8);
     transform-origin: center;
 	position: fixed;
 	z-index: 999;
@@ -231,25 +231,25 @@
     height: 60px;
     z-index: 1002;
     border-bottom: 2px solid #DFDFDF;
-    display: flex; /* 使用 flexbox 布局 */
-    align-items: center; /* 垂直居中 */
-    justify-content: center; /* 水平居中 */
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
 }
 
 #PhoneTitle{
-	position: relative; /* 修改为 relative 以适应 flexbox */
-    text-align: center; /* 确保文本水平居中 */
-    color: #6B6B6B; /* 设置文本颜色 */
-    font-size: 25px; /* 设置字体大小 */
-    font-family: Arial, sans-serif; /* 设置字体样式 */
+	position: relative; 
+    text-align: center; 
+    color: #6B6B6B;
+    font-size: 25px; 
+    font-family: Arial, sans-serif; 
 }
 
 #ChatTitle{
-	position: relative; /* 修改为 relative 以适应 flexbox */
-    text-align: center; /* 确保文本水平居中 */
-    color: #6B6B6B; /* 设置文本颜色 */
-    font-size: 25px; /* 设置字体大小 */
-    font-family: Arial, sans-serif; /* 设置字体样式 */
+	position: relative;
+    text-align: center;
+    color: #6B6B6B;
+    font-size: 25px; 
+    font-family: Arial, sans-serif;
 }
 
 /*魔改css设置大容器*/
@@ -262,11 +262,11 @@
 }
 
 #SettingBoder{
-	position: absolute; /* 需要使用绝对定位相对于父容器 */
-    top: 100px; /* 距离父容器的顶部100px */
-    left: 11px; /* 左边减少10px宽度 */
-    right: 11px; /* 右边减少10px宽度 */
-    height: 690px; /* 维持原有高度 */
+	position: absolute; 
+    top: 100px; 
+    left: 11px; 
+    right: 11px; 
+    height: 690px; 
 	overflow-y: auto;
     border: 1px solid #C8C8C8;
 }
@@ -290,11 +290,11 @@
 
 /*魔改css对话区域*/
 #PhoneMainContainer{
-	position: absolute; /* 需要使用绝对定位相对于父容器 */
-    top: 100px; /* 距离父容器的顶部100px */
-    left: 10px; /* 左边减少10px宽度 */
-    right: 10px; /* 右边减少10px宽度 */
-    height: 530px; /* 维持原有高度 */
+	position: absolute; 
+    top: 100px; 
+    left: 10px;
+    right: 10px;
+    height: 530px;
     border: 1px solid #C8C8C8;
 	overflow-y: auto;
 }
@@ -309,8 +309,8 @@
 
 /*PC头像+对话框*/
 #PC-ChatContainer{
-	display: flex;          /* 启用 Flexbox */
-	justify-content: flex-end; /* 水平方向上靠右对齐 */
+	display: flex;        
+	justify-content: flex-end; 
 	align-items: center;
 	height: 120px;
 	background-color: #FFFFFF;
@@ -397,11 +397,11 @@
 
 /*下全为联系人*/
 #ContactorContainer{
-	position: absolute; /* 需要使用绝对定位相对于父容器 */
-    top: 100px; /* 距离父容器的顶部100px */
-    left: 13px; /* 左边减少10px宽度 */
-    right: 13px; /* 右边减少10px宽度 */
-    height: 690px; /* 维持原有高度 */
+	position: absolute; 
+    top: 100px;
+    left: 13px;
+    right: 13px;
+    height: 690px;
     /*border: 1.5px solid #A2A2A2;*/
 }
 
@@ -417,14 +417,14 @@
 #ContactPhoto{
 	position: absolute;
 	top: 15px;
-	height: 90px; /* 高度自适应 */
-    width: 90px; /* 宽度自适应 */
-    margin-right: auto; /* 确保左对齐 */
+	height: 90px;
+    width: 90px;
+    margin-right: auto;
 }
 
 #ContactPhoto img{
-	width: 100%; /* 图片宽度填充整个容器 */
-    height: auto; /* 高度自动 */
+	width: 100%; 
+    height: auto;
     display: block;
 	border-radius: 5px;
 }
