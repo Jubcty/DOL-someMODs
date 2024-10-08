@@ -3,8 +3,8 @@ function goToSelectedPassage() {
     var dropdown = document.getElementById('LiDropdown');
     var selectedOption = dropdown.options[dropdown.selectedIndex];
     var selectedText = selectedOption.textContent || selectedOption.innerText;
-    State.variables.selectedLi = selectedText; // 存储文本到 State 变量
-    Engine.play("PCToy_Buy_Finish"); // 跳转到选择的 Passage
+    State.variables.selectedLi = selectedText;
+    Engine.play("PCToy_Buy_Finish");
   }
   window.goToSelectedPassage = goToSelectedPassage;
 
@@ -17,17 +17,13 @@ function goToSelectedPassage() {
   //jq
 
 setup.handlePhotoSelection = function() {
-	// 获取被选中的radio按钮的值
 	var selectedType = $('input[name="Photoselect"]:checked').val();
-	// 设置SugarCube变量$W_phototype
 	State.variables.W_phototype = selectedType;
 	$('input[name="Photoselect"]').prop('checked', false);
   };
 
 setup.handlePCPhotoSelection = function() {
-	// 获取被选中的radio按钮的值
 	var selectedType = $('input[name="PCPhotoselect"]:checked').val();
-	// 设置SugarCube变量$PC_phototype
 	State.variables.PC_phototype = selectedType;
 	$('input[name="PCPhotoselect"]').prop('checked', false);
   };
@@ -108,7 +104,7 @@ $(document).ready(function() {
     });
 });
 
-/*魔改js*/
+
 function closePhone() {
 	wikifier("journalNotesTextareaSave");
 	updateOptions();
