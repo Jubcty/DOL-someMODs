@@ -1,0 +1,109 @@
+{
+    "name": "BIGHOUSE",
+    "version": "1.0.1",
+    "scriptFileList_inject_early": [
+      "testjs.js"
+    ],
+    "scriptFileList_earlyload": [],
+    "scriptFileList_preload": [],
+    "styleFileList": [
+      "modules/css/Phone.css"
+    ],
+    "scriptFileList": ["PCfunctions.js"],
+    "tweeFileList": [
+      "game/Widgets/BUY/BuyHouse.twee",
+      "game/Widgets/House/Hall.twee",
+      "game/Widgets/House/House.twee",
+      "game/Widgets/Links/Mylink.twee",
+      "game/Widgets/Mall/PCmall.twee",
+      "game/Widgets/Phone/PhoneDiv.twee",
+      "game/passages/BUY/BuyHouse_Pass.twee",
+      "game/passages/House/Balcony.twee",
+      "game/passages/House/Bathroom.twee",
+      "game/passages/House/Bedroom.twee",
+      "game/passages/House/kitchen.twee",
+      "game/passages/House/PCHouse.twee",
+      "game/passages/House/Readroom.twee",
+      "game/passages/BathRelated/PCBath Finish.twee",
+      "game/passages/BathRelated/PCBath.twee",
+      "game/passages/BathRelated/PCMasturbation Finish.twee",
+      "game/passages/BathRelated/PCMasturbation.twee",
+      "game/passages/Mall/electronic store.twee",
+      "game/passages/Mall/fresh market.twee",
+      "game/passages/Mall/PCMall.twee",
+      "game/passages/Mall/PCToy shop.twee",
+      "game/passages/Mall/PCFurniture store.twee",
+      "game/passages/WhitneyRelated/Housetold.twee"
+    ],
+    "imgFileList": [
+      "img/phone/arrow.png",
+      "img/phone/setting.png",
+      "img/phone/changephoto/type1.png",
+      "img/phone/changephoto/type2.png",
+      "img/phone/changephoto/type3.png",
+      "img/phone/Photo/type1.png",
+      "img/phone/Photo/type2.png",
+      "img/phone/Photo/type3.png",
+      "img/phone/PCPhoto/type1.png",
+      "img/phone/PCPhoto/type2.png",
+      "img/phone/PCPhoto/type3.png",
+      "img/phone/Buttons/chat.png",
+      "img/phone/Buttons/chat-click.png",
+      "img/phone/Buttons/chat.png",
+      "img/phone/Buttons/chat-click.png",
+      "img/phone/Buttons/other.png",
+      "img/phone/Buttons/other-click.png"
+    ],
+    "additionFile": [
+        "readme.txt",
+        "game/addon-replace/PhoneDiv.txt"
+    ],
+    "addonPlugin": [
+      {
+        "modName": "TweeReplacer",
+        "addonName": "TweeReplacerAddon",
+        "modVersion": "1.0.0",
+        "params": [
+          {
+              "passage": "Widgets Whitney",
+              "findString": "<<if $daily.whitney.ask is undefined and $location is \"park\">>",
+              "replace": "<<if $bighouse is 1>>\n\t\t\t\t<<askicon>><<link [[告知惠特尼你的大豪斯(1:00)|WhitneyTold]]>><</link>>\n\t\t\t<</if>>\n\t\t\t<br>\n\t\t\t<<if $daily.whitney.ask is undefined and $location is \"park\">>"
+          },
+          {
+              "passage": "StoryCaption",
+              "findString": "<div id=\"overlayButtons\">",
+              "replace":"<div id=\"overlayButtons\">\n        <<button PHONE>>\n            <<script>>\n                $(\"#PhoneOverlayContainer\").toggle();\n            <</script>>\n        <</button>>"
+          },
+          {
+              "passage": "PassageFooter",
+              "findString": "<div id=\"customOverlayContainer\" class=\"customOverlayContainer no-numberify hidden\" onclick=\"closeOverlay()\">",
+              "replaceFile":"game/addon-replace/PhoneDiv.txt"
+          }
+          ]
+        },
+        {
+          "modName": "ModLoader DoL ImageLoaderHook",
+          "addonName": "ImageLoaderAddon",
+          "modVersion": "^2.3.0",
+          "params": []
+        }
+    ],
+    "dependenceInfo": [
+      {
+        "modName": "TweeReplacer",
+        "version": "^1.0.0"
+      },
+      {
+        "modName": "ReplacePatcher",
+        "version": "^1.0.0"
+      },
+      {
+        "modName": "Simple Frameworks",
+        "version": ">=1.0.0"
+      },
+      {
+        "modName": "ModLoader DoL ImageLoaderHook",
+        "version": "^2.3.0"
+      }
+    ]
+}

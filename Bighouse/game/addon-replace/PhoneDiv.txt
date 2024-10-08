@@ -1,0 +1,212 @@
+<div id="PhoneOverlayContainer">
+
+	<div id="phoneOverlay">
+		<div id="PhonetimeContainer">
+		<div class="customOverlayClose" onclick="closePhone()"></div>
+			<div id="Phonetime">
+				<<ampm>>
+			</div>
+		</div>
+
+		<div id="BigContainer">
+			<div id="PhoneTitleContainer">
+				<div id="PhoneTitle">
+					和TA聊聊
+				</div>
+			</div>
+
+			<div id="ContactorContainer">
+				<div id="ContactorArea">
+					<div id="ContactPhoto">
+
+					<<if $W_phototype is undefined or $W_phototype is "">>
+						<img @src="'img/phone/Photo/'+'type1'+'.png'">
+					<<else>>
+						<img @src="'img/phone/Photo/'+$W_phototype+'.png'">
+					<</if>>
+
+					</div>
+					<div id="ContacortName">
+					<<if $nickname is undefined or $nickname is 0 or $nickname is "">>
+						Whitney
+					<<else>>
+						<<print $nickname>>
+					<</if>>
+					</div>
+
+					<<PhoneState>>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="ChatContainer">
+				<div id="PhoneTitleContainer">
+					<div id="arrow_ToContact">
+						<img src="img/phone/arrow.png">
+					</div>
+					<div id="ChatTitle">
+					<<if $nickname is undefined or $nickname is 0 or $nickname is "">>
+						Whitney
+					<<else>>
+						<<print $nickname>>
+					<</if>>
+					</div>
+					<div id="PhotoSetting">
+						<img src="img/phone/setting.png">
+					</div>
+				</div>
+
+				<div id="ChatOtherContainer">
+				</div>
+
+				<div id="PhoneMainContainer">
+					<div id="ChatArea">
+
+						<div id="PC-ChatContainer">
+
+							<div class="chat-bubble-container">
+								<div class="chat-bubble">
+									你说得对，但是我喜欢你，为了你，我要再画100张！
+								</div>
+							</div>
+
+							<div id="PC-ChatPhoto">
+								<<if $PC_phototype is undefined or $PC_phototype is "">>
+									<img @src="'img/phone/PCPhoto/'+'type1'+'.png'">
+								<<else>>
+									<img @src="'img/phone/PCPhoto/'+$PC_phototype+'.png'">
+								<</if>>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div id="SelectContainer">
+
+				</div>
+
+				<div id="SelectContainer2">
+				</div>
+
+				<div id="BottomSelectContainer">
+					<div id="ChatB">
+						<img src="img/phone/Buttons/chat.png">
+					</div>
+					<div id="DataB">
+						<img src="img/phone/Buttons/data.png">
+					</div>
+					<div id="OtherB">
+						<img src="img/phone/Buttons/other-click.png">
+					</div>
+				</div>
+		</div>
+
+		<div id="SettingContainer">
+				<div id="arrow_ToChat">
+						<img src="img/phone/arrow.png">
+				</div>
+				<div id="PhoneTitleContainer">
+					<div id="PhoneTitle">
+						设置
+					</div>
+				</div>
+
+				<div id="SettingBoder">
+					<div id="PhotoButtonContainer">
+						<span class="no-numberify">
+							<<link "(3)确认更换(段落刷新后生效)">>
+								<<run setup.handlePhotoSelection()>>
+								<<run setup.handlePCPhotoSelection()>>
+							<</link>>
+						</span>
+					</div>
+
+					<div id="nicknameContainer">
+						<div id="SettingTitle">
+							设置昵称(刷新生效)：
+						</div>
+						<input type="text" id="InputArea">
+
+						<div id="GetArea">
+							<span class="no-numberify">
+								<<link "(1)应用">>
+									<<set $nickname = $("#InputArea").val()>>
+									<<run $("#InputArea").val('')>>
+								<</link>>
+							</span>
+							<br>
+							<span class="no-numberify">
+								<<link "(2)取消设置">>
+									<<set $nickname = 0>>
+								<</link>>
+							</span>
+						</div>
+					</div>
+
+					<div id="PhotochangeContainer">
+						<div id="SettingTitle">
+							更换Whitney的头像：
+						</div>
+						<div id="PhotoChange">
+							<div class="changephoto">
+								<img src="img/phone/changephoto/type1.png">
+							</div>
+							<div class="changephoto">
+								<img src="img/phone/changephoto/type2.png">
+							</div>
+							<div class="changephoto">
+								<img src="img/phone/changephoto/type3.png">
+							</div>
+						</div>
+
+						<div id="ChangeArea">
+							<div class="changephoto">
+								<input type="radio" name="Photoselect" value="type1" style="width: 17px; height: 15px;">
+							</div>
+							<div class="changephoto">
+								<input type="radio" name="Photoselect" value="type2" style="width: 17px; height: 15px;">
+							</div>
+							<div class="changephoto">
+								<input type="radio" name="Photoselect" value="type3" style="width: 17px; height: 15px;">
+							</div>
+						</div>
+					</div>
+
+					<div id="PCchangeContainer">
+						<div id="SettingTitle">
+							更换你的头像：
+						</div>
+
+						<div id="PhotoChange">
+							<div class="changephoto">
+								<img src="img/phone/changephoto/type1.png">
+							</div>
+							<div class="changephoto">
+								<img src="img/phone/changephoto/type2.png">
+							</div>
+							<div class="changephoto">
+								<img src="img/phone/changephoto/type3.png">
+							</div>
+						</div>
+
+						<div id="ChangeArea">
+							<div class="changephoto">
+								<input type="radio" name="PCPhotoselect" value="type1" style="width: 17px; height: 15px;">
+							</div>
+							<div class="changephoto">
+								<input type="radio" name="PCPhotoselect" value="type2" style="width: 17px; height: 15px;">
+							</div>
+							<div class="changephoto">
+								<input type="radio" name="PCPhotoselect" value="type3" style="width: 17px; height: 15px;">
+							</div>
+						</div>
+					</div>
+
+				</div>
+		</div>
+	</div>
+</div>
+
+<div id="customOverlayContainer" class="customOverlayContainer no-numberify hidden" onclick="closeOverlay()">

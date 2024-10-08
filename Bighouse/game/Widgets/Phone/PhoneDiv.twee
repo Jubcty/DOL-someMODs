@@ -1,0 +1,17 @@
+:: PhoneD [widget]
+
+<<widget "PhoneState">>
+    <<if Time.hour gte 21 and Time.weekDay is 1>>
+        <div id="StateColor-red"></div>
+        <div id="StateDescription">有事就直接来酒吧。</div>
+    <<elseif Time.schoolTime>>
+        <div id="StateColor-green"></div>
+        <div id="StateDescription">愉快的学校活动时间！</div>
+    <<elseif isInPark("Whitney") >>
+        <div id="StateColor-red"></div>
+        <div id="StateDescription">现在，最好不要打扰我。</div>
+    <<else>>
+        <div id="StateColor-green"></div>
+        <div id="StateDescription">开趴或者搞破坏，速度联系我。</div>
+	<</if>>
+<</widget>>

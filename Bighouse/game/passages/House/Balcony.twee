@@ -1,0 +1,6 @@
+:: PCBalcony
+你来到了大豪斯附带的花园，空间还蛮大的可以用来种点东西。<br>
+不过你总感觉这个花园是不是有点眼熟，像是孤儿院的那块地？<br><br>
+
+<<display_plot garden>>
+<<main_hall_icon>><<link [[回到客厅|PCHouse]]>><</link>>

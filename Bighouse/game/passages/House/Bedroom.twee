@@ -1,0 +1,117 @@
+:: PCBedroom
+/*基础家具*/
+<<if $PCBedroom_base is undefined>>
+	<<set $PCBedroom_base to 0>>
+<</if>>
+/*海报自定义图案*/
+<<if $PCPoster is undefined>>
+	<<set $PCPoster to 0>>
+<</if>>
+/*墙纸自定义图案*/
+<<if $PCbedWall is undefined>>
+	<<set $PCbedWall to 0>>
+<</if>>
+/*娃娃1,放主要恋人或是自定义的娃娃*/
+<<if $PCDoll1 is undefined>>
+	<<set $PCrefrigerator to 0>>
+<</if>>
+/*娃娃2，放惠惠送的毛绒玩具*/
+<<if $PCDoll2 is undefined>>
+	<<set $PCrefrigerator to 0>>
+<</if>>
+/*娃娃数量*/
+<<if $PCDoll_count is undefined>>
+	<<set $PCDoll_count to 0>>
+<</if>>
+/*植物1*/
+<<if $PCPlants1 is undefined>>
+	<<set $PCrefrigerator to 0>>
+<</if>>
+
+
+你来到了卧室。
+<<if $PCbedWall is 1>>
+	“惠特尼绝美肌肉线条。”的图案覆盖着墙壁。<br>
+<</if>>
+
+<<if $PCDoll1 is 1>>
+    <<if $PCBedroom_base is 0>>
+	    <br><<print $doll1>>的毛绒玩具暂时放在了一个角落里。<br>
+    <<elseif $PCBedroom_base is 1>>
+        <br><<print $doll1>>的毛绒玩具正放在你的床边。<br>
+    <</if>>
+<</if>>
+
+<<if $PCBedroom_base is 0>>
+	目前什么家具都没有，这里的空间比你在孤儿院的房间要大很多，可以好好地装饰一下。<br>
+    <span class="green">床、桌椅、衣柜还有装饰什么的应该可以去购物中心的大豪斯专区采购一下。</span><br><br>
+<<else>>
+    你的古董桌和一张单人扶手椅占据着你衣柜旁那狭小的空间。<br>
+    你的大理石桌和一张单人扶手椅紧挨在墙壁边上。<br><br>
+    房间里挂着的温度计显示<span class="teal"><<print Weather.toSelectedString(Weather.temperature, 0)>></span>。<br><br>
+
+    你的巨大豪华舒适双人床占据了这个房间的一部分空间。<br>
+    link（1）脱光爬床上<br>
+    link（2）穿睡衣爬床上<br>
+
+    你的衣服正放在錾刻衣橱里面。<br>
+    <<wardrobeicon>><<link [[衣柜|PCWardrobe]]>><</link>><br>
+    <<sextoysicon>><<link [[性玩具|PCSexToy]]>><<set $sextoyInvReturnLink to $passage>><</link>><br>
+    <<mirroricon>><<link [[镜子|PCMirror]]>><</link>><br><br>
+    
+<</if>>
+
+浴室就旁边，你可以直接去洗澡。<br>
+<<bathroomicon>><<link [[浴室(0:01)|PCBathroom]]>><<pass 1>><</link>><br>
+
+
+
+<<main_hall_icon>><<link [[回到客厅|PCHouse]]>><</link>>
+
+
+:: PCMirror
+
+<<effects>>
+
+<<link [[离开|PCBedroom]]>><<unset $mirrorMenu>><<unset $bodywritingSet>><<postMirror>><</link>>
+<br>
+
+<<mirror>>
+<br><br>
+
+:: PCSexToy
+
+<<if $worn.lower.name != "naked">>
+	<span id="stiShowUnderwear"><<link "隐藏下装">><<run window.tempHideLower()>><<run Links.generateLinkNumbers($(".passage"))>><</link>></span>
+<</if>>
+<div id="stiCursedText" class="ssm_fade_in"></div>
+<br>
+<div class="sti_grid" id="sti_grid">
+	<div class="sti_grid_title">性玩具物品栏</div>
+</div>
+<br>
+<div class="sti_gridDescContainer" id="stiDescPillContainer" style="display: none;">
+	<div class="sti_descContainer" id="sti_descContainer"></div>
+</div>
+<br><br>
+<<run window.patchStraponsWearStatus()>>
+<<run window.sexToysInventoryInit()>>
+
+<<if $debug is 1>>
+	<<link [[重新载入|PCSexToy]]>><</link>>
+	<br>
+<</if>>
+
+<<link [[离开|$sextoyInvReturnLink]]>><<unset $sextoyInvReturnLink>><</link>>
+
+
+:: PCWardrobe
+
+<<effects>>
+<<set $wardrobe_location to "wardrobe">>
+<<wardrobeSelection>>
+你看了看你的衣柜。
+<<link [[离开|PCBedroom]]>><<cleanupOnWardrobeExit>><</link>>
+
+<br><br>
+<div id="wardrobewear"><<wardrobewear>></div>

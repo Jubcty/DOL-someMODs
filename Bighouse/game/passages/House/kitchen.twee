@@ -1,0 +1,51 @@
+:: PCkitchen
+
+<<if $PCkitchen is undefined>>
+	<<set $PCkitchen to 0>>
+<</if>>
+你来到了厨房。
+<<if $PCkitchen is 0>>
+	里面空空如也，只有一个台子和小水池。得好好装修一下才能开始做饭。<br><br>
+    <<link [[打电话装修厨房(0:05)|PCkitchen_Buy]]>><<pass 5>><</link>><br><br>
+<<else>>
+    各种做菜所需设备齐全，你已经做好了为自己以及恋爱对象们下厨的准备！做菜，爽！<br><br>
+    <<link [[下厨|PCHouse]]>><</link>><br>
+    <<link [[查看冰箱|PCHouse]]>><</link>><br><br>
+<</if>>
+
+<<main_hall_icon>><<link [[回到客厅|PCHouse]]>><</link>>
+
+
+:: PCkitchen_Buy
+
+<<if $PCkitchen_un is undefined>>
+	<<set $PCkitchen_un to 0>>
+<</if>>
+你使用大豪斯自带的座机拨打了一旁纸条上的大豪斯24h服务的电话，
+<<if $PCkitchen_un is 0>>
+    你还不知道给厨房置办完整的一套需要花多少钱。<br>
+    "你好，我要装修一下我家的厨房，大概需要多少钱还有多少时间？"<br>
+    "£3000免运费附带一套满足您做菜需求的厨具，完成估计需要3小时吧，随叫随到。"<br>
+    电话那头的人流利地说明了大致情况，你思考要不要现在直接购买。<br><br>
+
+    <<link [[买了！(£3000(3:00))|PCkitchen_Buy_over]]>><<set $money -= 300>><<set $PCkitchen to 1>><<pass 180>><</link>><br>
+    <<link [[暂时不买|PCkitchen_Buy_refuse]]>><<set $PCkitchen_un to 1>><</link>><br>
+<<else>>
+    一套的价格是£3000，是真的贵，你还是在犹豫要不要现在就购买。<br>
+    "您好，需要我们现在提供服务吗？"<br><br>
+    <<link [[买了！(£3000(3:00))|PCkitchen_Buy_over]]>><<set $money -= 300>><<set $PCkitchen to 1>><<pass 180>><</link>><br>
+    <<link [[暂时不买|PCkitchen_Buy_refuse]]>><<set $PCkitchen_un to 1>><</link>><br>
+<</if>>
+
+:: PCkitchen_Buy_refuse
+    "打扰了，感觉暂时不需要来着。"你说。<br>
+    "好的，有需要请再联系我们！大豪斯服务，随叫随到~！"<br><br>
+    <<link [[继续|PCHouse]]>><</link>>
+
+:: PCkitchen_Buy_over
+    "现在送来吧，这么大个地方不能做饭也太难受了，货到付款。"<br>
+    "了解！"<br>
+    没等多久装修人员便来到了你的大豪斯，在装修的过程中你一直在旁边看着，生怕出什么错。<br>
+    等到他们结束的时候你看了下时间，刚好三小时，你十分佩服他们的准时程度。这些人在走之前还顺便清理了一下厨房，除了东西贵了点，他们的服务还蛮不错的。<br>
+    <span class="green">你现在可以在这里做饭了！部分食材可以去大豪斯食材市场采购，或是用自己已有的食材。</span><<stress -1>><<lstress>><br><br>
+    <<link [[继续|PCkitchen]]>><</link>>

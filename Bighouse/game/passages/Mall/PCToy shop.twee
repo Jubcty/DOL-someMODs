@@ -1,0 +1,74 @@
+:: PCToy shop
+
+你走进大豪斯玩具店，各式各样新奇的玩具摆在货架上，看起来非常适合你这个年龄段的成年人。<br>
+更令人在意的是毛绒玩具专卖区，他们会提供一些定制服务。<br><br>
+
+店员相当精神的在柜台前摸鱼。<br>
+
+<<link [[询问有关定制毛绒玩具(0:01)|PCToy Buy]]>><<pass 1>><</link>><br><br>
+<<getouticon>><<link [[离开|PCMall]]>><</link>><br>
+
+
+:: PCToy Buy
+
+"毛绒玩具定制啊，没问题，只要能提供一个形象就行，我们家的速度和质量包您满意。"<br><br>
+
+<<if $PCDoll_count is 0 or $PCDoll_count is undefined>>
+    <span class="green">你的卧室目前一个玩具都没有。</span><br>
+<<elseif $PCDoll_count is 1>>
+    <span class="green">你现在有一个<<print $doll1>>的毛绒玩具了。</span><br>
+<</if>>
+
+
+定制一个恋人的毛绒玩具：<br>
+
+<<LiGenerate>>
+
+/*<<for $i = 0; $i < $Li_list.length; $i++>>
+  <<print $Li_list[$i]>><<if $i < $Li_list.length - 1>> <br> <</if>>
+<</for>>*/
+
+/*Li选单动态创建*/
+<select id="LiDropdown">
+  <<for $i = 0; $i < $Li_list.length; $i++>>
+    <<if $Li_list[$i] isnot $doll1>>
+      <option value=$Li_list[$i]><<=$Li_list[$i]>></option>
+    <</if>>
+  <</for>>
+</select>
+<button onclick="goToSelectedPassage()">购买(£200|(0:30))</button><br><br>
+<<getouticon>><<link [[算了|PCToy shop]]>><</link>><br>
+
+
+:: PCToy_Buy_Finish
+<<pass 30>>
+<<set $money -= 20000>>
+<<set $PCDoll_count to 1>>
+<<set $PCDoll1 to 1>>
+<<set $doll1 to State.variables.selectedLi>>
+店里没什么客人。时间很快，你和店员有说有笑的过了半小时，谈论的基本上是你和<<print $doll1>>的一些快乐的事。他看时间差不多了便走进了旁边的房间里，带着你定制的<<print $doll1>>的毛绒玩具。<br>
+"你的恋人真的很好看呢，做出来的玩偶也很可爱！"<br><br>
+你激动地从他的手上接过做好的毛绒玩具，你捏了捏，手感非常好~
+<<if $doll1 is "惠特尼">>
+  虽然很小一只但那自信放荡的笑容确实很有惠特尼的感觉，千万千万不能被他发现你买了这个。
+<<elseif $doll1 is "罗宾">>
+  罗宾的头上戴着花环并暖暖地笑着，很像一个小天使。
+<<elseif $doll1 is "悉尼">>
+  是已经染成黑发状态的悉尼，看起来对你充满欲望。
+  小小悉尼手上握着十字架，你私心为ta加上了光环和一对天使翅膀。
+<<elseif $doll1 is "凯拉尔">>
+  凯拉尔的头发做出了乱糟糟的感觉，手上还拿着一把毛绒绒的刀，威胁性可以说是一点没有。
+<<elseif $doll1 is "艾弗里">>
+  艾弗里即使被做成玩偶也没有丧失一直以来的优雅感。
+<<elseif $doll1 is "艾利克斯">>
+  艾利克斯的头上戴着一顶草帽，很适合作为种植工作中的陪伴者。
+<<elseif $doll1 is "伊甸">>
+  伊甸的身上带着迷你猎枪，有ta陪着在森林走夜路都不怕了。
+<<elseif $doll1 is "黑狼">>
+  可爱的黑狼。
+<<elseif $doll1 is "巨鹰">>
+  迷你巨鹰。
+<</if>>
+<br>
+和店员告别后，你抱着刚获得的毛绒玩具开心地离开了大豪斯玩具店。<<trauma -1>><<stress -1>><<ltrauma>><<lstress>><br>
+<br><<getouticon>><<link [[继续|PCMall]]>><</link>><br>

@@ -1,0 +1,9 @@
+:: PCBath
+
+<<effects>>
+<<set $outside to 0>>
+
+你洗得干干净净。<br><br>
+
+<<getouticon>><<link [[出去|PCBath Finish]]>><<clotheson>><<strip>><</link>><br>
+<<link [[自慰|PCMasturbation]]>><<clotheson>><<strip>><<set $masturbationstart to 1>><</link>>

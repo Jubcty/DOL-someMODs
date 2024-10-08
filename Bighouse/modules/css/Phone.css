@@ -1,0 +1,472 @@
+/*底部按钮分区*/
+#ChatB{
+	position: absolute;
+	width: 140px;
+	height: 60px;
+	border-right: 2px solid #DEEFF8;
+	display: flex;  /* 使用 Flexbox */
+	justify-content: center;  /* 水平居中 */
+	align-items: center;
+}
+
+#DataB{
+	position: absolute;
+	left: 140px;
+	width: 140px;
+	height: 60px;
+	border-right: 2px solid #DEEFF8;
+	display: flex;  /* 使用 Flexbox */
+	justify-content: center;  /* 水平居中 */
+	align-items: center;
+}
+
+#OtherB{
+	position: absolute;
+	left: 280px;
+	width: 140px;
+	height: 60px;
+	display: flex;  /* 使用 Flexbox */
+	justify-content: center;  /* 水平居中 */
+	align-items: center;
+}
+
+
+/*魔改css主要功能*/
+#ChatMainContainer{
+	display: none;
+	position: absolute;
+}
+
+#ChatOtherContainer{
+	display: none;
+	position: absolute; /* 需要使用绝对定位相对于父容器 */
+    top: 100px; /* 距离父容器的顶部100px */
+    left: 10px; /* 左边减少10px宽度 */
+    right: 10px; /* 右边减少10px宽度 */
+    height: 645px; /* 维持原有高度 */
+    border: 1px solid #C8C8C8;
+}
+
+/*魔改css设置相关存放处*/
+
+#PhotoButtonContainer{
+	position: absolute;
+	content: none;
+	top: 580px;
+	height: 40px;
+	left: 25px;
+	color: #074E9D;
+    cursor: pointer;
+	font-size: 20px;
+    font-family: 'SimHei', '黑体', sans-serif;
+}
+
+#PCchangeContainer{
+	position: absolute;
+	top: 370px;
+	left: 25px;
+	right: 25px;
+	border-bottom: 1px solid #A9A9A9;
+	height: 200px;
+}
+
+#nicknameContainer{
+	display: flex;
+	position: absolute;
+	left: 25px;
+	right: 25px;
+	height: 175px;
+	border-bottom: 1px solid #A9A9A9;
+}
+
+#PhotochangeContainer{
+	position: absolute;
+	top: 170px;
+	left: 25px;
+	right: 25px;
+	border-bottom: 1px solid #A9A9A9;
+	height: 200px;
+}
+
+#PhotoChange{
+	display: flex;
+	position: absolute;
+	top: 60px;
+	left: 0px;
+	right: 15px;
+	height: 110px;
+}
+
+.changephoto {
+    flex: 1;                        /* 使所有区域平等分配空间 */
+    display: flex;
+    justify-content: center;       /* 水平居中内容 */
+    align-items: center;            /* 垂直居中内容 */
+    text-align: center;             /* 文字居中 */
+    padding: 7px;                  /* 可选: 添加内部间距 */
+}
+
+#ChangeArea{
+	display: flex;
+	position: absolute;
+	top: 160px;
+	left: 0px;
+	right: 6px;
+	height: 40px;
+}
+
+#changefont{
+	color: #074E9D;
+    cursor: pointer;
+	font-size: 23px;
+    font-family: 'SimHei', '黑体', sans-serif;
+}
+
+#SettingTitle{
+	position: absolute;
+	top: 10px;
+	height: 50px;
+	color: #000000;
+    font-size: 24px;
+    font-family: 'SimHei', '黑体', sans-serif;
+}
+
+#InputArea{
+	position: absolute;
+	top: 60px;
+	left: 0px;
+	border: 0.5px solid #858585;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+#GetArea{
+	position: absolute;
+	content: none;
+	top: 100px;
+	height: 40px;
+	color: #074E9D;
+    cursor: pointer;
+	font-size: 20px;
+    font-family: 'SimHei', '黑体', sans-serif;
+}
+
+#ClearNickname{
+	position: absolute;
+	left: 160px;
+	top: 100px;
+	height: 40px;
+	color: #074E9D;
+    cursor: pointer;
+	font-size: 20px;
+    font-family: 'SimHei', '黑体', sans-serif;
+}
+
+/*魔改css公用*/
+#PhotoSetting {
+	position: absolute;
+	width: auto;
+	height: auto;
+	right: 20px;
+	top: 45px;
+}
+
+#arrow_ToContact {
+	position: absolute;
+	width: auto;
+	height: auto;
+	left: 20px;
+	top: 45px;
+}
+
+#arrow_ToChat {
+	position: absolute;
+	width: auto;
+	height: auto;
+	left: 20px;
+	top: 45px;
+}
+
+#PhoneOverlayContainer{
+	display: none;
+	transform: scale(0.8); /* 缩小为原来的 80% */
+    transform-origin: center;
+	position: fixed;
+	z-index: 999;
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 810px;
+	pointer-events: all;
+	backdrop-filter: blur(3px);
+}
+
+/*魔改css公用手机背景*/
+#phoneOverlay {
+	border-radius: 20px;
+	position: relative;
+	z-index: 1000;
+    width: 420px;
+    height: 810px;
+    background-color: #F5F5F5;
+}
+
+/*魔改css时间条*/
+#PhonetimeContainer{
+	border-radius: 20px 20px 0px 0px;
+    z-index: 1001;
+	height: 30px;
+	background-color: #808080;
+}
+
+#Phonetime{
+	position: absolute;
+    z-index: 1002;
+	right: 45%;
+}
+
+/*魔改css公用标题*/
+#PhoneTitleContainer{
+	top: 30px;
+    height: 60px;
+    z-index: 1002;
+    border-bottom: 2px solid #DFDFDF;
+    display: flex; /* 使用 flexbox 布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+}
+
+#PhoneTitle{
+	position: relative; /* 修改为 relative 以适应 flexbox */
+    text-align: center; /* 确保文本水平居中 */
+    color: #6B6B6B; /* 设置文本颜色 */
+    font-size: 25px; /* 设置字体大小 */
+    font-family: Arial, sans-serif; /* 设置字体样式 */
+}
+
+#ChatTitle{
+	position: relative; /* 修改为 relative 以适应 flexbox */
+    text-align: center; /* 确保文本水平居中 */
+    color: #6B6B6B; /* 设置文本颜色 */
+    font-size: 25px; /* 设置字体大小 */
+    font-family: Arial, sans-serif; /* 设置字体样式 */
+}
+
+/*魔改css设置大容器*/
+#SettingContainer{
+	display: none;
+	border-radius: 0px 0px 20px 20px;
+    z-index: 1001;
+	top: 30px;
+	height: 780px;
+}
+
+#SettingBoder{
+	position: absolute; /* 需要使用绝对定位相对于父容器 */
+    top: 100px; /* 距离父容器的顶部100px */
+    left: 11px; /* 左边减少10px宽度 */
+    right: 11px; /* 右边减少10px宽度 */
+    height: 690px; /* 维持原有高度 */
+	overflow-y: auto;
+    border: 1px solid #C8C8C8;
+}
+
+/*魔改css联系人大容器*/
+#BigContainer{
+	border-radius: 0px 0px 20px 20px;
+    z-index: 1001;
+	top: 30px;
+	height: 780px;
+}
+
+/*魔改css聊天大容器*/
+#ChatContainer{
+	display: none;
+	border-radius: 0px 0px 20px 20px;
+    z-index: 1001;
+	top: 30px;
+	height: 780px;
+}
+
+/*魔改css对话区域*/
+#PhoneMainContainer{
+	position: absolute; /* 需要使用绝对定位相对于父容器 */
+    top: 100px; /* 距离父容器的顶部100px */
+    left: 10px; /* 左边减少10px宽度 */
+    right: 10px; /* 右边减少10px宽度 */
+    height: 530px; /* 维持原有高度 */
+    border: 1px solid #C8C8C8;
+	overflow-y: auto;
+}
+
+#ChatArea{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	background-color: #e3dbdb;
+}
+
+/*PC头像+对话框*/
+#PC-ChatContainer{
+	display: flex;          /* 启用 Flexbox */
+	justify-content: flex-end; /* 水平方向上靠右对齐 */
+	align-items: center;
+	height: 120px;
+	background-color: #FFFFFF;
+	min-width: 80px;
+}
+
+#PC-ChatPhoto{
+	height: 80px;
+	width: 80px;
+	flex-shrink: 0;
+}
+
+#PC-ChatPhoto img{
+	height: auto;
+	width: 100%;
+	display: block;
+	border-radius: 5px;
+}
+
+.chat-bubble-container {
+    display: flex;
+    justify-content: flex-start; /* Left align for sender, change to 'flex-end' for receiver */
+    padding: 10px;
+}
+
+.chat-bubble {
+    position: relative;
+    background-color: #CCF1AB;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: #333;
+    max-width: 85%;
+}
+
+.chat-bubble::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 100%; /* Right side of the bubble */
+    border: 15px solid transparent;
+    border-left-color: #CCF1AB;
+    border-right: 0;
+    margin-top: -15px;
+    margin-left: -1px;
+}
+
+/*惠的头像+对话框*/
+#W-ChatContainer{
+	position: absolute;
+}
+
+/*对话选项区*/
+#SelectContainer{
+	position: absolute;
+	top: 635px;
+	left: 10px;
+    right: 10px;
+	height: 110px;
+	background-color: #FFFFFF;
+}
+/*约会选项区*/
+#SelectContainer2{
+	display: none;
+	position: absolute;
+	top: 635px;
+	left: 10px;
+    right: 10px;
+	height: 110px;
+	background-color: #FFFFFF;
+}
+
+#BottomSelectContainer{
+	display: flex;
+	position: absolute;
+	top: 750px;
+	height: 60px;
+	width: 420px;
+	background-color: #C8D0D4;
+	border-radius: 0px 0px 20px 20px;
+}
+
+
+/*下全为联系人*/
+#ContactorContainer{
+	position: absolute; /* 需要使用绝对定位相对于父容器 */
+    top: 100px; /* 距离父容器的顶部100px */
+    left: 13px; /* 左边减少10px宽度 */
+    right: 13px; /* 右边减少10px宽度 */
+    height: 690px; /* 维持原有高度 */
+    /*border: 1.5px solid #A2A2A2;*/
+}
+
+#ContactorArea{
+	display: flex;
+	position: absolute;
+    left: 15px;
+    right: 15px;
+    height: 110px;
+    border-bottom: 1.5px solid #C8C8C8;
+}
+
+#ContactPhoto{
+	position: absolute;
+	top: 15px;
+	height: 90px; /* 高度自适应 */
+    width: 90px; /* 宽度自适应 */
+    margin-right: auto; /* 确保左对齐 */
+}
+
+#ContactPhoto img{
+	width: 100%; /* 图片宽度填充整个容器 */
+    height: auto; /* 高度自动 */
+    display: block;
+	border-radius: 5px;
+}
+
+#ContacortName{
+	position: absolute;
+	left: 110px;
+	top: 10px;
+	height: 40px;
+    color: #000000;
+    font-size: 30px;
+    font-family: 'Consolas', sans-serif;
+	font-weight: bold;
+}
+
+#StateColor-red{
+	position: absolute;
+	height: 13px;
+	width: 13px;
+	left: 110px;
+	top: 83px;
+	border-radius: 50%;
+	background-color: #B21400;
+}
+
+#StateColor-green{
+	position: relative;
+	height: 13px;
+	width: 13px;
+	left: 110px;
+	top: 83px;
+	border-radius: 50%;
+	background-color: #61E55F;
+}
+
+#StateDescription{
+	position: absolute;
+	height: 20px;
+	left: 130px;
+	top: 77px;
+	color: #696969;
+    font-size: 14px;
+    font-family: 'SimHei', '黑体', sans-serif;
+	letter-spacing: 1px;
+}

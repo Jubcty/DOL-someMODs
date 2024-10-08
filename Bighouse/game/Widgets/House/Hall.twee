@@ -1,0 +1,55 @@
+:: PCHall [widget]
+
+<<widget "displayHall">>
+/*客厅的PS*/
+<<if $PS5type is undefined>>
+    <<set $PS5type to 0>>
+<</if>>
+
+
+
+/*客厅的电视*/
+<<if $PCTelevision is undefined>>
+    <<set $PCTelevision to 0>>
+<</if>>
+
+/*客厅的沙发*/
+<<if $PCSofa is undefined>>
+    <<set $PCSofa to 0>>
+<</if>>
+
+/*客厅的墙纸*/
+<<if $PCWall is undefined>>
+    <<set $PCWall to 0>>
+<</if>>
+
+你正待在大豪斯的客厅中。<br><br>
+/*墙纸图案显示*/
+<<if $PCWall is 0>>
+    墙上空空如也，或许可以联系些人过来贴个墙纸？<br><br>
+<<else>>
+    墙上是惠特尼的照片，好康啊社保了！<br><br>
+<</if>>
+
+<<if $PS5type is 1 or $PS5type is 2>>
+    你的普雷station第五代
+    <<if $PS5type is 1>>
+        数字版
+    <<else>>
+        光驱版
+    <</if>>
+    正放在桌子上。<br>
+    <<if $PCTelevision is 0>>
+        你没有任何的输出设备用来连接。<br>
+    <<else>>
+        link:打开普雷station第五代
+    <</if>>
+<</if>>
+
+<<bedroomicon>><<link [[卧室(0:01)|PCBedroom]]>><<pass 1>><</link>><br>
+<<officeicon>><<link [[厨房(0:01)|PCkitchen]]>><<pass 1>><</link>><br>
+<<bathroomicon>><<link [[浴室(0:01)|PCBathroom]]>><<pass 1>><</link>><br>
+<<officeicon>><<link [[书房(0:01)|PCReadroom]]>><<pass 1>><</link>><br>
+<<gardenicon>><<link [[花园(0:01)|PCBalcony]]>><<pass 1>><</link>><br><br>
+
+<</widget>>

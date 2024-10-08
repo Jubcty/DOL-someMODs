@@ -1,0 +1,34 @@
+:: PCMall_widget [widget]
+
+<<widget "LiGenerate">>
+
+<<set $Li_list to []>>
+<<if $robinromance is 1>>
+	<<set $Li_list.push("罗宾")>>
+<</if>>
+<<if $whitneyromance is 1 and C.npc.Whitney.state isnot "dungeon">>
+    <<set $Li_list.push("惠特尼")>>
+<</if>>
+<<if $kylarenglish gte 1 and C.npc.Kylar.state isnot "prison">>
+    <<set $Li_list.push("凯拉尔")>>
+<</if>>
+<<if $sydneyromance is 1>>
+    <<set $Li_list.push("悉尼")>>
+<</if>>
+<<if $syndromeeden is 1>>
+    <<set $Li_list.push("伊甸")>>
+<</if>>
+<<if $dateCount.Avery gte 3 and C.npc.Avery.state isnot "dismissed">>
+    <<set $Li_list.push("艾弗里")>>
+<</if>>
+<<if $syndromewolves is 1 and hasSexStat("deviancy", 3)>>
+    <<set $Li_list.push("黑狼")>>
+<</if>>
+<<if $syndromebird is 1>>
+    <<set $Li_list.push("巨鹰")>>
+<</if>>
+<<if $farm_stage gte 7 and $alex_countdown is undefined>>
+    <<set $Li_list.push("艾利克斯")>>
+<</if>>
+
+<</widget>>

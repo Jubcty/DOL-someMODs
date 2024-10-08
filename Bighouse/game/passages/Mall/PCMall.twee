@@ -1,0 +1,10 @@
+:: PCMall
+
+你在大豪斯商场中，里面卖的全是大豪斯内专用家具以及装饰，还有一个售卖新鲜食材的商店。<br><br>
+
+<<link [[大豪斯家具店|PCFurniture store]]>><</link>><br>
+<<link [[大豪斯玩具店|PCToy shop]]>><</link>><br>
+<<link [[大豪斯食材市场|PCfresh market]]>><</link>><br>
+<<link [[大豪斯电子产品专卖店|PCelectronic store]]>><</link>><br><br>
+
+<<getouticon>><<link [[离开|High Street]]>><</link>><br>

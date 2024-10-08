@@ -1,0 +1,32 @@
+:: PCfresh market
+
+<<if $PCkitchen is undefined>>
+	<<set $PCkitchen to 0>>
+<</if>>
+你正在大豪斯食材市场里，人不是很多。里面琳琅满目的食材足以支持你对于做菜的奇思妙想。<br><br>
+<<if $PCkitchen is 1>>
+    <<link [[前往蔬菜专区|PCvegetable]]>><</link>><br>
+    <<link [[前往肉类专区|PCmeat]]>><</link>><br>
+    <<link [[前往海鲜专区|PCfish]]>><</link>><br><br>
+<<else>>
+    你的厨房还不足以你让你能在那里做饭，等处理好了再来吧。<br><br>
+<</if>>
+
+<<getouticon>><<link [[离开|PCMall]]>><</link>><br>
+
+:: PCvegetable
+你来到了蔬菜专区。<br><br>
+
+<<getouticon>><<link [[离开|PCfresh market]]>><</link>><br>
+
+
+:: PCmeat
+你来到了肉类专区。<br><br>
+
+<<getouticon>><<link [[离开|PCfresh market]]>><</link>><br>
+
+
+:: PCfish
+你来到了海鲜专区。<br><br>
+
+<<getouticon>><<link [[离开|PCfresh market]]>><</link>><br>

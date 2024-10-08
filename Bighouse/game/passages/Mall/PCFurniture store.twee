@@ -1,0 +1,67 @@
+:: PCFurniture store
+
+<<if $PCscare is undefined>>
+    <<set $PCscare to 0>>
+<</if>>
+<<if $emawake is undefined>>
+    <<set $emawake to 0>>
+<</if>>
+
+你来到了大豪斯家具店，人很少，里面卖的都是大豪斯专用的豪华高档家具。<br>
+<<if $PCBedroom_base is 1>>
+    店员在来回转悠，看起来很无聊但又不敢摸鱼。<br><br>
+<</if>>
+
+<<if $PCBedroom_base is undefined or $PCBedroom_base is 0>>
+    <span class="green">你的卧室里什么家具都没有，是时候置办一套了。</span><br><br>
+    <<if $PCscare is 0 and $emawake is 0>>
+        你看见店内员工正躺在大床上睡觉，让你忍不住想化身老板对他正义执行。<br>
+        <<link [[吓他一跳(0:01)|PCFurniture store Buy]]>>
+            <<pass 1>><<set $PCscare to 1>>
+            <<set $emawake to 1>>
+        <</link>><<stress -1>><<lstress>><br>
+
+        <<link [[询问购买家具相关的事(0:01)|PCFurniture store Buy]]>><<pass 1>><</link>><br><br>
+    <<elseif $emawake is 1>>
+        员工正很精神地在场地内到处转悠，时刻准备好以最好的状态应对到来的顾客以及视察的老板。<br>
+        <<link [[询问购买家具相关的事(0:01)|PCFurniture store Buy]]>><<pass 1>><</link>><br><br>
+    <</if>>
+<</if>>
+
+<<getouticon>><<link [[离开(0:01)|PCMall]]>><<pass 1>><</link>><br>
+
+
+:: PCFurniture store Buy
+<<if $PCscare is 1 and $emawake is 1>>
+    <<set $PCscare to 0>>
+    店员被你吓了一大跳，不过还好并不是真的老板来了，他长舒一口气。<br>
+<<elseif $PCscare is 0 and $emawake is 0>>
+    店员迷迷糊糊地睁开眼睛，像是条件反射一般很流畅地说出了注意事项。<br>
+<</if>>
+
+"我们的家具只支持一整套卖哦，并非单独出售。成套出售不仅相比原价有了30%的折扣，还省去了几趟运送的费用，怎么想都非常赚吧~"<br><br>
+<<link [[直接买了(£2000(3:00))|PCFurniture store Finish]]>><<pass 180>><<set $money -= 200000>><<set $PCBedroom_base to 1>><</link>><br>
+<<link [[考虑一下|PCFurniture store Finish]]>><</link>><br>
+
+:: PCFurniture store Finish
+
+<<if $PCBedroom_base is 1>>
+    "嗯....是挺划算的，好吧我买了。"你再次仔细检查了一下家具的做工，最后做出了决定。<br>
+    在你付完钱后，店员兴奋地打了个电话通知搬运的人，为了保证没有什么差错，你看着他们把货物完好无损的装上运输车上，并和他们一起来到了你的大豪斯。<br><br>
+
+    "好了，东西按您说的摆放位置全部安置好了，还有什么需要的吗？"<br>
+    你站在卧室的门口，看向内部。这些家具的位置参考了你在孤儿院时卧室里的摆放，因为面积比那大得多，所以还是留有很多空间，不过你觉得这样也够了。<br>
+    "可以了，今天辛苦你们了，如果之后有什么问题我会联系你们。"你笑着对他们说，并将他们送到了门口。
+     <span class="green">从现在起卧室就可以正式使用了。</span><br><br>
+
+     <<link [[继续|PCHouse]]>><</link>><br>
+
+<<else>>
+    "好的，请慢走~"
+    <<if $emawake is 1>>
+        店员继续开始精神地巡场。<br><br>
+    <<elseif $emawake is 0>>
+        店员打了个哈欠继续趴床上睡了。<br><br>
+    <</if>>
+    <<link [[继续|PCMall]]>><</link>><br>
+<</if>>

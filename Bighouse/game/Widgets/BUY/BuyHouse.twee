@@ -1,0 +1,46 @@
+:: testWidget [widget]
+
+<<widget "Buy_BigHouse">>
+	<<if $bighouse is undefined>>
+		<<set $bighouse to 0>>
+	<</if>>
+
+	<<if $House_phase is undefined>>
+		<<set $House_phase to 0>>
+	<</if>>
+
+	<<if $bighouse is 0 and $House_phase is 0>>
+		"哦我的上帝啊，看看这是谁来了!"这人很莫名其妙热情地向你走来，急切地向你介绍这些大豪斯。<br>
+		"看看你们这最豪华的豪斯。"你说<br>
+		"最好的豪斯啊，只要50w。"<br><br>
+
+		<<if $money gte 50000000>>
+			<<link [[买下它！|BuyHouse]]>><<set $House_phase to 1>><<set $money -= 50000000>><<set $bighouse to 1>><</link>><br>
+		<</if>>
+		<<link [[要吃饭的嘛，算了|BuyHouse]]>><<set $House_phase to 2>><</link>><br>
+
+	<<elseif $House_phase is 1>>
+		"便宜，兄弟，我要了。"你毫不犹豫地买下了这个豪华大豪斯，只见那人恭敬地向你递上了镶金钥匙，你拿走了它，现在你是学校里最靓的崽了！<<trauma -3>><<stress -3>><<lltrauma>><<llstress>><br>
+		<span class="green">大豪斯位于多瑙河街，现在你可以拎包入住了。</span><br>
+		<<link [[兴奋前往大豪斯|PCHouse]]>><<set $House_phase to 3>><</link>>
+
+	<<elseif $House_phase is 2>>
+		<<if $money lt 50000000>>
+			你知道你没有这么多米买下它，假装思索了一会。<br>
+		<<else>>
+			你的钱是够的，但还是不太想现在买，算了吧。<br>
+		<</if>>
+		"我再考虑一下吧，谢了兄弟。"<br>
+		<<link [[离开|Barb Street]]>><<set $House_phase to 0>><</link>>
+
+	<<elseif $bighouse is 1 and $House_phase is 3>>
+		你暂时应该是不缺大豪斯了的，但不知道为什么还是进了这里面。乘着那人还没注意到你你赶紧开溜了。<br>
+		<<link [[离开|Barb Street]]>><</link>>
+	<</if>>
+
+<</widget>>
+
+<<widget "Buy_BigHouse_link">>
+	<br>
+	<<link [[ 买大豪斯(0:01)|BuyHouse]]>><<pass 1>><</link>>
+<</widget>>

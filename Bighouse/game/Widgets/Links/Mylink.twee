@@ -1,0 +1,15 @@
+:: Mylinks [widget]
+
+<<widget "My_BigHouse_link">>
+    <<if $bighouse is 1>>
+    <br>
+        <<link [[你的大豪斯(0:01)|PCHouse]]>><<pass 1>><</link>><br>
+    <</if>>
+<</widget>>
+
+<<widget "BigHouseMall_link">>
+    <<if $bighouse is 1>>
+    <br>
+        <<link [[大豪斯超商(0:01)|PCMall]]>><<pass 1>><</link>><br>
+    <</if>>
+<</widget>>

@@ -1,0 +1,12 @@
+:: PCReadroom
+你来到了书房。<br><br>
+
+<<if $getPC is undefined>>
+    <<set $getPC to 0>>
+<</if>>
+
+<<if $getPC is 1>>
+    link:打开你的笔记本<br><br>
+<</if>>
+
+<<main_hall_icon>><<link [[回到客厅|PCHouse]]>><</link>>

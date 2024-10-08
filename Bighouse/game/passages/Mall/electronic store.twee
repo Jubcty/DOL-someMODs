@@ -1,0 +1,86 @@
+:: PCelectronic store
+
+你来到了大豪斯电子产品专卖店。<br>
+<<if $elec_open is undefined>>
+    <span class="blue">你暂时还没有买这些电子产品的欲望...或是理由？</span><br><br>
+<<else>>
+    在这里可以买到手机、笔记本电脑和游戏机等设备，价格看起来都不是很低。不是什么特别需要的东西，可以等稍微富裕的时候再来购买。<br><br>
+
+    <<if $getphone is undefined or $getphone is 0>>
+        <<link [[询问手机(0:01)|BuyPhone]]>><<pass 1>><</link>><br>
+    <</if>>
+
+    <<if $getPC is undefined or $getPC is 0>>
+        <<link [[询问笔记本电脑(0:01)|BuyPC]]>><<pass 1>><</link>><br>
+    <</if>>
+
+    <<if $PS5type is undefined or $PS5type is 0>>
+        <<link [[询问游戏机(0:01)|BuyPS5]]>><<pass 1>><</link>><br><br>
+    <</if>>
+<</if>>
+
+<<getouticon>><<link [[离开|PCMall]]>><</link>><br>
+
+:: BuyPhone
+
+你向这里的店员询问手机购买的相关问题，店员耐心地为你解答。<br>
+这里最便宜的手机买一部需要£600，并且不需要提供身份证就可以办一张电话卡，足以满足你日常的需要。<br><br>
+    <<link [[买手机(£600(0:30))|BuyPhone_finish]]>><<pass 30>><<set $money -= 60000>><<set $getphone to 1>><</link>><br>
+    <<link [[暂时不(0:01)|BuyPhone_refuse]]>><<pass 1>><</link>><br>
+
+:: BuyPS5
+
+你看了看这里卖的游戏机，发现有普雷station第五代，你没有接触过这些但依然知道这是在主机玩家中广受喜爱的那一款，你有种想买下它玩一玩的冲动。<br>
+当然只是买游戏机是不行的，还得买配套的手柄还有显示器这样的输出设备才能正常游玩...嗯，买游戏也得花钱来着，总之后续花销会很大。<br>
+店员表示这款游戏机分为数字版和光驱版，后者相比前者买来时要贵一点但后续可以出掉游戏光盘回血。思考了一下你觉得没必要买显示器，买个电视放在客厅大概会更好。<br><br>
+
+手柄价格为£200，数字版为£1000，光驱版为£2000。你决定：<br><br>
+<<link [[购买手柄+数字版(£1200(1:00))|BuyPS5_finish]]>><<set $money -= 120000>><<pass 60>><<set $PS5type to 1>><</link>><br>
+<<link [[购买手柄+光驱版(£2200(1:00))|BuyPS5_finish]]>><<set $money -= 220000>><<pass 60>><<set $PS5type to 2>><</link>><br>
+<<link [[暂时不(0:01)|BuyPS5_refuse]]>><<pass 1>><</link>><br>
+
+:: BuyPC
+
+你看着各种价位各种配置的笔记本，在店员的说明下你选择了最经济实用的办公本，因为你并没有对配置有什么要求，简单上个网就可以了。一台办公本需要花费£1500，各种配件不需要单独购买<br><br>
+
+<<link [[购买一台办公本(£1500(1:00))|BuyPC_finish]]>><<set $money -= 150000>><<pass 60>><<set $getPC to 1>><</link>><br>
+<<link [[暂时不(0:01)|BuyPC_refuse]]>><<pass 1>><</link>><br>
+
+:: BuyPhone_finish
+
+在当场仔细确认手机没问题后你便买下了手机然后回到了你的大豪斯。<br>
+你打开了之前惠特尼给你写的带有他联系方式的纸条，安装了对应的APP后你向他发送了好友申请，没等多久他便通过了你的申请。
+你很开心，现在你的通讯录中有第一个联系人了。<<stress -2>><<trauma -2>><<lstress>><<ltrauma>> <br>
+<span class="green">现在可以通过手机联系惠特尼了！尝试在他的自由时间约他出去玩或是...去干些涩涩的事？</span><br><br>
+
+<<link [[继续|PCHouse]]>><</link>>
+
+:: BuyPS5_finish
+
+你买下了属于你的普雷station第五代并抱回家中，但暂时还不能玩，因为你没有任何的游戏。<span class="green">你需要在笔记本电脑上购买游戏或是游戏光盘。</span><br><br>
+
+<<link [[继续|PCHouse]]>><</link>>
+
+:: BuyPC_finish
+
+在检查无误后你拎着电脑包回到家里，思考片刻后选择将笔记本放置在书房里。<span class="green">在购买了游戏机的情况下可以在此购买游戏或是游戏光盘，也可以在二手市场上购入或是卖出。</span><br><br>
+
+<<link [[继续|PCHouse]]>><</link>>
+
+:: BuyPhone_refuse
+
+你觉得暂时还是不太需要手机，等真想要的时候再来吧。<br><br>
+
+<<getouticon>><<link [[继续|PCMall]]>><</link>>
+
+:: BuyPS5_refuse
+
+你觉得这个的花销还是太大了，等下次再来吧。<br><br>
+
+<<getouticon>><<link [[继续|PCMall]]>><</link>>
+
+:: BuyPC_refuse
+
+你觉得还没到需要购买的时候，等需要再来吧。<br><br>
+
+<<getouticon>><<link [[继续|PCMall]]>><</link>>
