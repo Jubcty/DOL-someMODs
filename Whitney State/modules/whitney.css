@@ -1,0 +1,6 @@
+#clothimage{
+    top: 0px;   /*不用动*/
+    left: 32px;     /*值越大，显示越靠右*/
+    clip-path: inset(0 8px 0 0);    /*右侧按矩形裁剪 8px*/
+    z-index: 11;    /*图层顺序，值越大越优先显示*/
+}

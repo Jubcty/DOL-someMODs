@@ -1,0 +1,109 @@
+{
+    "name": "Visualized Whitney State",
+    "version": "1.1.0",
+    "styleFileList": [
+      "modules/whitney.css"
+    ],
+    "scriptFileList": [],
+    "tweeFileList": [],
+    "imgFileList": [
+      "img/misc/Whitney_state/daily/hh.gif",
+      "img/misc/Whitney_state/daily/hlh.gif",
+      "img/misc/Whitney_state/daily/hll.gif",
+      "img/misc/Whitney_state/daily/hlm.gif",
+      "img/misc/Whitney_state/daily/lh.gif",
+      "img/misc/Whitney_state/daily/ll.gif",
+      "img/misc/Whitney_state/daily/m.gif",
+      "img/misc/Whitney_state/daily/ml.gif",
+      "img/misc/Whitney_state/others/dungeon.gif",
+      "img/misc/Whitney_state/others/pub.gif",
+      "img/misc/Whitney_state/others/smoke.gif",
+      "img/misc/Whitney_state/school/hh.gif",
+      "img/misc/Whitney_state/school/hlh.gif",
+      "img/misc/Whitney_state/school/hll.gif",
+      "img/misc/Whitney_state/school/hlm.gif",
+      "img/misc/Whitney_state/school/lh.gif",
+      "img/misc/Whitney_state/school/ll.gif",
+      "img/misc/Whitney_state/school/m.gif",
+      "img/misc/Whitney_state/school/ml.gif"
+    ],
+    "additionFile": [
+      "readme.txt",
+      "tweeAddon/whitney.txt"
+    ],
+    "addonPlugin": [
+      {
+        "modName": "TweeReplacer",
+        "addonName": "TweeReplacerAddon",
+        "modVersion": "1.2.0",
+        "params": [
+          {
+            "passage": "Widgets",
+            "findString": "<<widget \"weatherdisplay\">>",
+            "replaceFile": "tweeAddon/whitney.txt"
+          }
+        ]
+      },
+      {
+        "modName": "ReplacePatcher",
+        "addonName": "ReplacePatcherAddon",
+        "modVersion": "1.0.0",
+        "params": {
+          "js": [],
+          "css": [],
+          "twee": [
+            {
+              "comment": "找到  &lt;&lt;if $intro is 0&gt;&gt;  ，在下方加入代码：&lt;&lt;Whitney_state&gt;&gt;",
+              "TODO": "caption.twee",
+              "passageName": "StoryCaption",
+              "from": "<<if $intro is 0>>",
+              "to": "<<if $intro is 0>>\n<<Whitney_state>>"
+            }
+          ]
+        }
+      },
+      {
+        "modName": "ModuleCssReplacer",
+        "addonName": "ModuleCssReplacerAddon",
+        "modVersion": "^1.0.0",
+        "params": [
+          {
+            "comment": "找到@media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0)，在#img,下加入#clothimage,",
+            "cssName": "base",
+            "findString": "@media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {\n\t@media all {\n\t\t#ui-bar-body {\n\t\t\toverflow-x: hidden;\n\t\t}\n\n\t\t#img,\n\t\t#daystate,",
+            "replace": "@media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {\n\t@media all {\n\t\t#ui-bar-body {\n\t\t\toverflow-x: hidden;\n\t\t}\n\n\t\t#img,\n\t\t#clothimage,\n\t\t#daystate,"
+          },
+          {
+            "comment": "找到@media not all and (min-resolution: 0.001dpcm)，在#img,下加入#clothimage,",
+            "cssName": "base",
+            "findString": "@media not all and (min-resolution: 0.001dpcm) {\t@media all {\t\t#ui-bar-body {\t\t\toverflow-x: hidden;\t\t}\t\t#img,",
+            "replace": "@media not all and (min-resolution: 0.001dpcm) {\t@media all {\t\t#ui-bar-body {\t\t\toverflow-x: hidden;\t\t}\t\t#img,\n\t\t#clothimage,"
+          }
+        ]
+      },
+      {
+        "modName": "ModLoader DoL ImageLoaderHook",
+        "addonName": "ImageLoaderAddon",
+        "modVersion": "^2.3.1",
+        "params": []
+      }
+    ],
+    "dependenceInfo": [
+      {
+        "modName": "TweeReplacer",
+        "version": "^1.0.0"
+      },
+      {
+        "modName": "ReplacePatcher",
+        "version": "^1.0.0"
+      },
+      {
+        "modName": "ModLoader DoL ImageLoaderHook",
+        "version": "^2.3.1"
+      },
+      {
+        "modName": "ModuleCssReplacer",
+        "version": "^1.0.0"
+      }
+    ]
+  }

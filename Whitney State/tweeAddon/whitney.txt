@@ -1,0 +1,82 @@
+<<widget "Whitney_state">>
+	<<if C.npc.Whitney.state is "dungeon">>
+			<<set _gifWhitney to 'img/misc/Whitney_state/others/'>>
+			<img id="clothimage" @src="_gifWhitney + 'dungeon' + '.gif'">
+    <<else>>
+		<<if Time.hour gte 21 and Time.weekDay is 1>>
+				<<set _gifWhitney to 'img/misc/Whitney_state/others/'>>
+				<img id="clothimage" @src="_gifWhitney + 'pub' + '.gif'">
+
+			<<elseif Time.schoolTime >>
+				<<set _gifWhitney to 'img/misc/Whitney_state/school/'>>
+				<<if C.npc.Whitney.love gte 20 >>
+					<<if C.npc.Whitney.lust gte 60 >>
+						<img id="clothimage" @src="_gifWhitney + 'hh' + '.gif'">
+					<<else>>
+						<<if C.npc.Whitney.dom gte 20 >>
+							<img id="clothimage" @src="_gifWhitney + 'hlh' + '.gif'">
+						<<elseif C.npc.Whitney.dom lte 8 >>
+							<img id="clothimage" @src="_gifWhitney + 'hll' + '.gif'">
+						<<else>>
+							<img id="clothimage" @src="_gifWhitney + 'hlm' + '.gif'">
+						<</if>>
+					<</if>>
+					
+				<<elseif C.npc.Whitney.love lte 5 >>
+					<<if C.npc.Whitney.lust gte 60 >>
+						<img id="clothimage" @src="_gifWhitney + 'lh' + '.gif'">
+					<<else>>
+						<img id="clothimage" @src="_gifWhitney + 'll' + '.gif'">
+					<</if>>
+					
+				<<else>>
+					<<if C.npc.Whitney.dom lte 8 >>
+						<img id="clothimage" @src="_gifWhitney + 'ml' + '.gif'">
+					<<else>>
+						<img id="clothimage" @src="_gifWhitney + 'm' + '.gif'">
+					<</if>>
+				<</if>>				
+
+			<<elseif isInPark("Whitney") >>
+				<<set _gifWhitney to 'img/misc/Whitney_state/others/'>>
+			    <img id="clothimage" @src="_gifWhitney + 'smoke' + '.gif'">
+
+			
+				
+			<<else>>
+				<<set _gifWhitney to 'img/misc/Whitney_state/daily/'>>
+				<<if C.npc.Whitney.love gte 20 >>
+						<<if C.npc.Whitney.lust gte 60 >>
+							<img id="clothimage" @src="_gifWhitney + 'hh' + '.gif'">
+						<<else>>
+							<<if C.npc.Whitney.dom gte 20 >>
+								<img id="clothimage" @src="_gifWhitney + 'hlh' + '.gif'">
+							<<elseif C.npc.Whitney.dom lte 8 >>
+								<img id="clothimage" @src="_gifWhitney + 'hll' + '.gif'">
+							<<else>>
+								<img id="clothimage" @src="_gifWhitney + 'hlm' + '.gif'">
+							<</if>>
+						<</if>>
+					
+				<<elseif C.npc.Whitney.love lte 5 >>
+						<<if C.npc.Whitney.lust gte 60 >>
+							<img id="clothimage" @src="_gifWhitney + 'lh' + '.gif'">
+						<<else>>
+							<img id="clothimage" @src="_gifWhitney + 'll' + '.gif'">
+						<</if>>
+					
+				<<else>>
+						<<if C.npc.Whitney.dom lte 8 >>
+							<img id="clothimage" @src="_gifWhitney + 'ml' + '.gif'">
+						<<else>>
+							<img id="clothimage" @src="_gifWhitney + 'm' + '.gif'">
+						<</if>>
+				<</if>>
+
+			<</if>>
+				
+	<</if>>
+
+<</widget>>
+
+<<widget "weatherdisplay">>
