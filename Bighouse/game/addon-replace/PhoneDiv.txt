@@ -40,68 +40,73 @@
 			</div>
 		</div>
 
-		<div id="ChatContainer">
-				<div id="PhoneTitleContainer">
-					<div id="arrow_ToContact">
-						<img src="img/phone/arrow.png">
-					</div>
-					<div id="ChatTitle">
-					<<if $nickname is undefined or $nickname is 0 or $nickname is "">>
-						Whitney
-					<<else>>
-						<<print $nickname>>
-					<</if>>
-					</div>
-					<div id="PhotoSetting">
-						<img src="img/phone/setting.png">
-					</div>
-				</div>
+		    <div id="ChatContainer">
+            <div id="PhoneTitleContainer">
+                <div id="arrow_ToContact">
+                    <img src="img/phone/arrow.png">
+                </div>
+                <div id="ChatTitle">
+                <<if $nickname is undefined or $nickname is 0 or $nickname is "">>
+                    Whitney
+                <<else>>
+                    <<print $nickname>>
+                <</if>>
+                </div>
+                <div id="PhotoSetting">
+                    <img src="img/phone/setting.png">
+                </div>
+            </div>
 
-				<div id="ChatOtherContainer">
-				</div>
+            <div id="ChatOtherContainer">
+            </div>
 
-				<div id="PhoneMainContainer">
-					<div id="ChatArea">
+            <div id="PhoneMainContainer">
 
-						<div id="PC-ChatContainer">
+                <div id="ChatArea">
 
-							<div class="chat-bubble-container">
-								<div class="chat-bubble">
-									你说得对，但是我喜欢你，为了你，我要再画100张！
-								</div>
-							</div>
+                </div>
 
-							<div id="PC-ChatPhoto">
-								<<if $PC_phototype is undefined or $PC_phototype is "">>
-									<img @src="'img/phone/PCPhoto/'+'type1'+'.png'">
-								<<else>>
-									<img @src="'img/phone/PCPhoto/'+$PC_phototype+'.png'">
-								<</if>>
-							</div>
-						</div>
+            </div>
 
-					</div>
-				</div>
+            <div id="SelectContainer">
+                <div class="sub-container">
+                    <span class="no-numberify">
+                            <<link "(1)普通的闲聊">>
+                                <<run setup.addRandomChat('CasualChat')>>
+                            <</link>>
+                    </span>
+                </div>
+                <div class="sub-container">
+                    <span class="no-numberify">
+                            <<link "(2)发电式聊法">>
+                                <<run setup.addRandomChat('CrazyChat')>>
+                            <</link>>
+                    </span>
+                </div>
+                <div class="sub-container">
+                    <span class="no-numberify">
+                            <<link "(3)问他点什么">>
+                                <<run setup.addRandomChat('AskChat')>>
+                            <</link>>
+                    </span>
+                </div>
+            </div>
 
-				<div id="SelectContainer">
+            <div id="SelectContainer2">
+            </div>
 
-				</div>
-
-				<div id="SelectContainer2">
-				</div>
-
-				<div id="BottomSelectContainer">
-					<div id="ChatB">
-						<img src="img/phone/Buttons/chat.png">
-					</div>
-					<div id="DataB">
-						<img src="img/phone/Buttons/data.png">
-					</div>
-					<div id="OtherB">
-						<img src="img/phone/Buttons/other-click.png">
-					</div>
-				</div>
-		</div>
+            <div id="BottomSelectContainer">
+                <div id="ChatB">
+                    <img src="img/phone/Buttons/chat.png">
+                </div>
+                <div id="DataB">
+                    <img src="img/phone/Buttons/data.png">
+                </div>
+                <div id="OtherB">
+                    <img src="img/phone/Buttons/other-click.png">
+                </div>
+            </div>
+    </div>
 
 		<div id="SettingContainer">
 				<div id="arrow_ToChat">
