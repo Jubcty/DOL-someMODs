@@ -1,0 +1,93 @@
+{
+    "name": "LI_LOCKET",
+    "version": "1.2.0",
+    "styleFileList": [
+      "modules/locket.css"
+    ],
+    "scriptFileList": [],
+    "tweeFileList": [],
+    "additionFile": [
+      "readme.txt",
+      "game/addon-replace/widget_add.txt"
+    ],
+    "imgFileList": [
+      "img/ui/locket_color/bronze.png",
+      "img/ui/locket_color/gold.png",
+      "img/ui/locket_color/silver.png",
+      "img/ui/npc_photos/Alex_f.png",
+      "img/ui/npc_photos/Alex_m.png",
+      "img/ui/npc_photos/Avery_f.png",
+      "img/ui/npc_photos/Avery_m.png",
+      "img/ui/npc_photos/Black Wolf_f.png",
+      "img/ui/npc_photos/Black Wolf_m.png",
+      "img/ui/npc_photos/Eden_f.png",
+      "img/ui/npc_photos/Eden_m.png",
+      "img/ui/npc_photos/Great Hawk_f.png",
+      "img/ui/npc_photos/Great Hawk_m.png",
+      "img/ui/npc_photos/Kylar_f.png",
+      "img/ui/npc_photos/Kylar_m.png",
+      "img/ui/npc_photos/Robin_f.png",
+      "img/ui/npc_photos/Robin_m.png",
+      "img/ui/npc_photos/Sydney_f.png",
+      "img/ui/npc_photos/Sydney_m.png",
+      "img/ui/npc_photos/Whitney_f.png",
+      "img/ui/npc_photos/Whitney_m.png"
+    ],
+    "addonPlugin": [
+      {
+        "modName": "ReplacePatcher",
+        "addonName": "ReplacePatcherAddon",
+        "modVersion": "1.0.0",
+        "params": {
+          "js": [
+            {
+              "comment": "函数增加",
+              "fileName": "ui.js",
+              "from": "window.closeOverlay = closeOverlay;",
+              "to": "window.closeOverlay = closeOverlay;\nfunction closeLocket() {\n\twikifier(\"journalNotesTextareaSave\");\n\tupdateOptions();\n\tdelete T.currentOverlay;\n\tdelete V.tempDisable;\n\tT.buttons.reset();\n\t$(\"#photo_display\").css(\"display\", \"none\");\n}\nwindow.closeLocket = closeLocket;"
+            }
+          ],
+          "css": [],
+          "twee": [
+            {
+              "comment": "div修改",
+              "passageName": "Mirror Locket",
+              "from": "<img class=\"icon infront\" @src=\"'img/ui/locket_'+$worn.neck.colour+'.png'\">\n\t\t\t<img class=\"icon\" @src=\"'img/ui/locket_photo_'+$worn.neck.colour+'.png'\">",
+              "to": "<<LI_locket>>"
+            },
+            {
+              "comment": "div增加",
+              "passageName": "StoryCaption",
+              "from": "<<if $intro is 0>>",
+              "to": "<<if $worn.neck.name is \"love locket\">>\n<div class=\"content_locket\">\n\n\t<<if $worn.neck.colour is \"gold\">>\n\t\t<button id=\"locket_img\" type=\"button\" role=\"button\" onclick=\"document.getElementById('photo_display').style.display='block'\"><span class=\"locket_icon_gold\"></span></button>\n\t<<elseif $worn.neck.colour is \"silver\">>\n\t\t<button id=\"locket_img\" type=\"button\" role=\"button\" onclick=\"document.getElementById('photo_display').style.display='block'\"><span class=\"locket_icon_silver\"></span></button>\t\t\n\t<<elseif $worn.neck.colour is \"bronze\">>\n\t\t<button id=\"locket_img\" type=\"button\" role=\"button\" onclick=\"document.getElementById('photo_display').style.display='block'\"><span class=\"locket_icon_bronze\"></span></button>\n\t<</if>>\t\n\n    </div>\n<</if>>\n\n<div id=\"photo_display\">\n\t<div class=\"customOverlayClose\" onclick=\"closeLocket()\"></div>\n\t<<LI_locket>>\n</div>\n<<if $intro is 0>>"
+            }
+          ]
+        }
+      },
+      {
+        "modName": "TweeReplacer",
+        "addonName": "TweeReplacerAddon",
+        "modVersion": "1.2.0",
+        "params": [
+          {
+            "comment": "widget增加",
+            "passage": "Widgets",
+            "findString": "<<widget \"beastescape\">>\n\t<<trauma 12>><<pain 6>><<stress 12>>\n\t<<set $worn.over_lower.integrity -= 20>>\n\t<<set $worn.over_upper.integrity -= 20>>\n\t<<set $worn.lower.integrity -= 20>>\n\t<<set $worn.upper.integrity -= 20>>\n\t<<set $worn.under_lower.integrity -= 20>>\n\t<<set $worn.under_upper.integrity -= 20>>\n\t<<bruise full>>\n\t<<gtrauma>><<gpain>><<gstress>>\n<</widget>>",
+            "replaceFile": "game/addon-replace/widget_add.txt"
+          }
+        ]
+      },
+      {
+        "modName": "ModLoader DoL ImageLoaderHook",
+        "addonName": "ImageLoaderAddon",
+        "modVersion": "^2.3.0",
+        "params": []
+      }
+    ],
+    "dependenceInfo": [
+      {
+        "modName": "ModLoader DoL ImageLoaderHook",
+        "version": "^2.3.0"
+      }
+    ]
+  }

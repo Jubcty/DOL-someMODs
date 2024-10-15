@@ -1,0 +1,12 @@
+（放在了window.closeOverlay = closeOverlay;的下面）
+
+
+function closeLocket() {
+	wikifier("journalNotesTextareaSave");
+	updateOptions();
+	delete T.currentOverlay;
+	delete V.tempDisable;
+	T.buttons.reset();
+	$("#photo_display").css("display", "none");
+}
+window.closeLocket = closeLocket;

@@ -1,0 +1,71 @@
+<<widget "beastescape">>
+	<<trauma 12>><<pain 6>><<stress 12>>
+	<<set $worn.over_lower.integrity -= 20>>
+	<<set $worn.over_upper.integrity -= 20>>
+	<<set $worn.lower.integrity -= 20>>
+	<<set $worn.upper.integrity -= 20>>
+	<<set $worn.under_lower.integrity -= 20>>
+	<<set $worn.under_upper.integrity -= 20>>
+	<<bruise full>>
+	<<gtrauma>><<gpain>><<gstress>>
+<</widget>>
+
+<<widget "LI_locket">>
+	<<if !$worn.neck.photo>>
+		<img class="icon" @src="'img/ui/locket_photo_'+$worn.neck.colour+'.png'">
+	<<elseif $worn.neck.photo is "Whitney">>
+		<<if C.npc.Whitney.gender is "f">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_f.png'">
+		<<elseif C.npc.Whitney.gender is "m">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_m.png'">
+		<</if>>	
+	<<elseif $worn.neck.photo is "Robin">>
+		<<if C.npc.Robin.gender is "f">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_f.png'">
+		<<elseif C.npc.Robin.gender is "m">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_m.png'">
+		<</if>>	
+	<<elseif $worn.neck.photo is "Kylar">>
+		<<if C.npc.Kylar.gender is "f">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_f.png'">
+		<<elseif C.npc.Kylar.gender is "m">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_m.png'">
+		<</if>>	
+	<<elseif $worn.neck.photo is "Eden">>
+		<<if C.npc.Eden.gender is "f">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_f.png'">
+		<<elseif C.npc.Eden.gender is "m">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_m.png'">
+		<</if>>	
+	<<elseif $worn.neck.photo is "Avery">>
+		<<if C.npc.Avery.gender is "f">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_f.png'">
+		<<elseif C.npc.Avery.gender is "m">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_m.png'">
+		<</if>>	
+	<<elseif $worn.neck.photo is "Alex">>
+		<<if C.npc.Alex.gender is "f">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_f.png'">
+		<<elseif C.npc.Alex.gender is "m">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_m.png'">
+		<</if>>	
+	<<elseif $worn.neck.photo is "Sydney">>
+		<<if C.npc.Sydney.gender is "f">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_f.png'">
+		<<elseif C.npc.Sydney.gender is "m">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_m.png'">
+		<</if>>	
+	<<elseif $worn.neck.photo is "Black Wolf">>
+		<<if C.npc.Black Wolf.gender is "f">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_f.png'">
+		<<elseif C.npc.Black Wolf.gender is "m">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_m.png'">
+		<</if>>	
+	<<elseif $worn.neck.photo is "Great Hawk">>
+		<<if C.npc.Great Hawk.gender is "f">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_f.png'">
+		<<elseif C.npc.Great Hawk.gender is "m">>
+			<img class="icon" @src="'img/ui/npc_photos/'+$worn.neck.photo+'_m.png'">
+		<</if>>	
+	<</if>>
+<</widget>>

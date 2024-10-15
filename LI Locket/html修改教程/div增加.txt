@@ -1,0 +1,20 @@
+（放在了&lt;&lt;if $intro is 0&gt;&gt;的上面）
+
+&lt;&lt;if $worn.neck.name is &quot;love locket&quot;&gt;&gt;
+&lt;div class=&quot;content_locket&quot;&gt;
+
+	&lt;&lt;if $worn.neck.colour is &quot;gold&quot;&gt;&gt;
+		&lt;button id=&quot;locket_img&quot; type=&quot;button&quot; role=&quot;button&quot; onclick=&quot;document.getElementById('photo_display').style.display='block'&quot;&gt;&lt;span class=&quot;locket_icon_gold&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+	&lt;&lt;elseif $worn.neck.colour is &quot;silver&quot;&gt;&gt;
+		&lt;button id=&quot;locket_img&quot; type=&quot;button&quot; role=&quot;button&quot; onclick=&quot;document.getElementById('photo_display').style.display='block'&quot;&gt;&lt;span class=&quot;locket_icon_silver&quot;&gt;&lt;/span&gt;&lt;/button&gt;		
+	&lt;&lt;elseif $worn.neck.colour is &quot;bronze&quot;&gt;&gt;
+		&lt;button id=&quot;locket_img&quot; type=&quot;button&quot; role=&quot;button&quot; onclick=&quot;document.getElementById('photo_display').style.display='block'&quot;&gt;&lt;span class=&quot;locket_icon_bronze&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+	&lt;&lt;/if&gt;&gt;	
+
+    &lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;div id=&quot;photo_display&quot;&gt;
+	&lt;div class=&quot;customOverlayClose&quot; onclick=&quot;closeLocket()&quot;&gt;&lt;/div&gt;
+	&lt;&lt;LI_locket&gt;&gt;
+&lt;/div&gt;

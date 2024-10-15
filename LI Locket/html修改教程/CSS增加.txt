@@ -1,0 +1,53 @@
+（丢在了/* Updated Hairstyle UI: End */</style>下面）
+
+
+<style id="locket" type="text/css">
+#locket_img {
+    background-color: transparent;
+	border: none;
+}
+
+.content_locket{
+	position: absolute;
+    top: 148px;
+    left: 133px;
+	z-index: 12;
+}
+
+.locket_icon_gold {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+	width: 30px;
+    height: 30px;
+    background-image: url('img/ui/locket_color/gold.png');
+}
+
+.locket_icon_silver {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+	width: 30px;
+    height: 30px;
+    background-image: url('img/ui/locket_color/silver.png');
+}
+
+.locket_icon_bronze {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+	width: 30px;
+    height: 30px;
+    background-image: url('img/ui/locket_color/bronze.png');
+}
+
+#photo_display{
+	display: none;
+	position: absolute;
+	top: 250px;
+	left: 80px;
+	backdrop-filter: blur(10px);
+	z-index: 13;
+}
+
+</style>

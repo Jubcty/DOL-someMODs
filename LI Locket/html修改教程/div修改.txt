@@ -1,0 +1,17 @@
+将&lt;div class=&quot;img-txt&quot;&gt;
+	&lt;div id=&quot;locket&quot;&gt;
+		&lt;span&gt;
+			&lt;img class=&quot;icon infront&quot; @src=&quot;&#39;img/ui/locket_&#39;+$worn.neck.colour+&#39;.png&#39;&quot;&gt;
+			&lt;img class=&quot;icon&quot; @src=&quot;&#39;img/ui/locket_photo_&#39;+$worn.neck.colour+&#39;.png&#39;&quot;&gt;
+		&lt;/span&gt;
+替换为了
+&lt;div class=&quot;img-txt&quot;&gt;
+	&lt;div id=&quot;locket&quot;&gt;
+		&lt;span&gt;
+			&lt;&lt;LI_locket&gt;&gt;
+		&lt;/span&gt;
+
+
+
+
+（算只是只替换了这个span里的东西？）
