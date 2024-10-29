@@ -32,3 +32,19 @@
         </div>
 	<</if>>
 <</widget>>
+
+<<widget "Whitney_NickName">>
+	<<if $nickname is undefined or $nickname is 0 or $nickname is "">>
+		Whitney
+	<<else>>
+		<<print $nickname>>
+	<</if>>
+<</widget>>
+
+<<widget "Whitney_Photo">>
+	<<if $W_phototype is undefined or $W_phototype is "">>
+		<img @src="'img/phone/Photo/'+'type1'+'.png'">
+	<<else>>
+		<img @src="'img/phone/Photo/'+$W_phototype+'.png'">
+	<</if>>
+<</widget>>

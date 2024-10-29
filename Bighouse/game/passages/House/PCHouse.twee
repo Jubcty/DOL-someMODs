@@ -1,5 +1,5 @@
 :: PCHouse
-
+<<set $outside to 0>>
 /*$DecoDegree是装修程度嗷*/
 <<if $DecoDegree is undefined>>
     <<set $DecoDegree to 0>>

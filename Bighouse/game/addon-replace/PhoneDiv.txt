@@ -58,7 +58,100 @@
             </div>
 
             <div id="ChatOtherContainer">
-            </div>
+
+					<div id="ChatOtherArea">
+
+						<div class="CircleContainer">
+							<div id="CircleInformation">
+
+								<div class="childCI" id="firstCI">
+
+								<<Whitney_Photo>>
+
+								</div>
+
+								<div class="childCI" id="secondCI">
+									<div class="CircleNickName">
+
+									<<Whitney_NickName>>
+
+									</div>
+									<div class="CircleSig">
+										牛津街第一高手
+									</div>
+								</div>
+
+							</div>
+
+							<div id="CircleText">
+									完全想不到我家荡妇居然一直没有手机？但是很好，现在她有了完全想不到我家荡妇居然一直没有手机？但是很好，现在她有了
+							</div>
+
+						</div>
+
+						<div class="CircleContainer">
+
+						<div id="CircleInformation">
+
+								<div class="childCI" id="firstCI">
+
+								<<Whitney_Photo>>
+
+								</div>
+
+								<div class="childCI" id="secondCI">
+									<div class="CircleNickName">
+
+									<<Whitney_NickName>>
+
+									</div>
+									<div class="CircleSig">
+										没有人比我更懂slut.
+									</div>
+								</div>
+
+							</div>
+
+							<div id="CircleText">
+									完全想不到我家荡妇居然一直没有手机？但是很好，现在她有了完全想不到我家荡妇居然一直没有手机？但是很好，现在她有了
+							</div>
+
+						</div>
+
+						<div class="CircleContainer">
+
+						<div id="CircleInformation">
+
+								<div class="childCI" id="firstCI">
+
+								<<Whitney_Photo>>
+
+								</div>
+
+								<div class="childCI" id="secondCI">
+									<div class="CircleNickName">
+
+									<<Whitney_NickName>>
+
+									</div>
+									<div class="CircleSig">
+										我是逆蝶
+									</div>
+								</div>
+
+							</div>
+
+							<div id="CircleText">
+									完全想不到我家荡妇居然一直没有手机？但是很好，现在她有了完全想不到我家荡妇居然一直没有手机？但是很好，现在她有了
+							</div>
+
+						</div>
+
+						/*在这删*/
+
+					</div>
+
+				</div>
 
             <div id="PhoneMainContainer">
 

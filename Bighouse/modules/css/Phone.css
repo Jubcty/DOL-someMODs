@@ -45,6 +45,127 @@
     right: 10px;
     height: 645px;
     border: 1px solid #C8C8C8;
+	overflow-y: auto;
+}
+
+#ChatOtherArea{
+	position: relative;
+}
+
+/*包含了整个动态信息*/
+.CircleContainer {
+    display: flex;
+	flex-direction: column; /* 子元素垂直堆叠 */
+    align-items: center; /* 子元素在水平方向上居中 */
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 80px;
+    background-color: #FFFFFF;
+}
+
+.CircleContainer + .CircleContainer {
+    margin-top: 15px; /* 只给后续的 CircleContainer 添加间距 */
+}
+
+/*信息栏，预定分为三块，依次为头像、昵称+签名、小爱心*/
+#CircleInformation{
+	display: flex;
+	height: 100px;
+	width: 100%;
+}
+
+.childCI{
+	height: 100%;
+}
+
+#firstCI {
+    width: 100px; /* 第一个 div 的宽度 */
+    background-color: #FFFFFF; /* 可选：背景颜色 */
+}
+
+#firstCI img{
+	position: relative;
+	display: block;
+	top: 10px;
+	left: 10px;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
+#secondCI {
+	display: flex; /* 启用 Flexbox */
+    flex-direction: column; /* 纵向排列子元素 */
+    flex-grow: 1; /* 占用剩余空间 */
+    background-color: #FFFFFF; /* 可选：背景颜色 */
+    height: 100%; /* 确保容器的高度占满父元素 */
+}
+
+.CircleNickName{
+	position: relative;
+	top: 15px;
+	left: 7px;
+	width: 280px;
+	font-size: 24px;
+	color: #000;
+    font-family: 'SimHei', '黑体', sans-serif;
+
+}
+.CircleSig{
+	position: relative;
+	top: 15px;
+	left: 7px;
+	width: 280px;
+	font-size: 15px;
+	color: #959595;
+    font-family: 'SimHei', '黑体', sans-serif;
+
+}
+
+#thirdCI {
+	display: flex; /* 启用 flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 90px; /* 第三个 div 的宽度 */
+    background-color: #FFFFFF; /* 可选：背景颜色 */
+}
+
+/*上下同级关系*/
+/*动态的文本*/
+#CircleText{
+	position: relative;
+	max-width: 330px;
+	min-height: 100px;
+	background-color: #E6F2F3;
+	font-size: 20px;
+	color: #000;
+	font-family: 'SimHei', '黑体', sans-serif;
+	margin-bottom: 15px;
+	margin-top: 0px;
+	padding: 12px;
+}
+
+/*小爱心*/
+#CircleLike{
+	position: relative;
+}
+
+/*昵称+签名(划分俩区域)*/
+#CircleNameContainer{
+	display: flex;
+}
+
+/*头像*/
+#CirclePhoto{
+	height: 80px;
+	width: 80px;
+	flex-shrink: 0;
+	margin-right: 10px;
+	background-image: url('img/phone/Photo/type1.png');
+	background-size: cover;
+	background-position: center;
+	border-radius: 10px;
+	display: block;
 }
 
 /*魔改css设置相关存放处*/
@@ -412,7 +533,7 @@
 	border-radius: 10px;
 }
 
-/*ml适应*/
+/*为了适应ML做出的调整*/
 #W-ChatPhototype1 {
 	height: 80px;
 	width: 80px;
